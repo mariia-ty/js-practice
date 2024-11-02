@@ -1,94 +1,82 @@
-//Lesson 12
+//Lesson 13
 
-const shop = {
-    name: "GameStop", 
-    locations: 15, 
-    items: ["video games", "posters", "controllers", "board games"],
-    maxVisitors: 200, 
-    open: true, 
-    netWorth: 23456789.87,
-
-};
-
-const keys = Object.keys(shop);
-//const values = Object.values(shop);
-const entries = Object.entries(shop);
-
-
-//  for (const key in shop) {
-//    console.log("Key: ", entries);
-//  }
-
-//goods
-// const goods = {
-//   apples: 6,
-//   grapes: 3,
-//   bread: 4,
-//   cheese: 7,
+// const school = {
+//   nameS: "Haig",
+//   students: 2145,
+//   teachers: 35
 // };
 
-// const values = Object.values(goods); // [6, 3, 4, 7]
+// const { nameS, students, teachers, open=true } = school;
+//console.log( nameS, students, teachers, open);
 
-// let total = 0;
+// const hotel = {
+//   name: "Resort Hotel",
+//   stars: 5,
+//   capacity: 100,
+// };
 
-// for (const value of values) {
-//   total += value;
-// }
+// const { name, ...rest } = hotel;
+// console.log(name);
+// console.log(rest);
 
-// console.log(total);
+// let options = {
+//   size: {
+//     width: 100,
+//     height: 200,
+//   },
+//   items: ["Cake", "Donut"],
+//   extra: true,
+// };
 
-//array
-//const houses = ["Arryn", "Frey", "Greyjoy", "Stark", "Lannister", "Tyrell"];
-// const completeHouses = [...houses, "Targaryen"];
+// деструктуризація разбита на декілька рядків для розуміння
+// const {
+//   size: {
+//     // покладемо size сюди
+//     width,
+//     height,
+//   },
+//   items: [item1, item2], // додамо елементи до items
+//   title = "Menu", // відсутня в об'єкті (використовується значення за замовчуванням)
+// } = options;
 
-// console.log(houses); // ['Arryn','Frey','Greyjoy','Stark','Lannister','Tyrell']
-// console.log(completeHouses);
- 
+// console.log(title); // Menu
+// console.log(width); // 100
+// console.log(height); // 200
+// console.log(item1); // Cake
+// console.log(item2); // Donut
 
-// const firstBatch = ["Arryn", "Frey", "Greyjoy"];
-// const secondBatch = ["Stark", "Lannister", "Tyrell"];
-
-// const houses = [...secondBatch, ...firstBatch];
-// console.log(houses); 
-
-// const a = { x: 1, y: 2 };
-// const b = { x: 0, z: 3 };
-
-// const c = Object.assign({}, a, b);
-// console.log(c);
-
-// const d = { ...a, ...b };
-// console.log(d);
-
-// const a = ["Mango"];
-// Присвоєння за посиланням.
-// Оскільки a це масив, в b записується посилання на вже існуючий
-// масив в пам'яті. Тепер a і b вказують на один і той же масив.
-// const b = a;
-// console.log(a); // ['Mango']
-// console.log(b); // ['Mango']
-
-// Змінимо масив, додавши ще один елемент, використовуючи покажчик з a
-// a.push("Poly");
-// console.log(a);
+// const rgb = [200, 255, 100];
+// const [red, green, blue] = rgb;
+// console.log(rgb);
+// console.log(red, green, blue);
 
 
-const products = [
-  { name: "apple", price: 2.14, quantity: 4, category: "red" },
-  { name: "orange", price: 2.14, quantity: 6, category: "orange" },
-  { name: "mango", price: 2.14, quantity: 8, category: "orange" },
-  { name: "banana", price: 2.14, quantity: 2, category: "yellow"},
-];
+// const rgb = [200, 255, 100];
+// const [red, ...colors] = rgb;
+// console.log(`Red: ${red}, Colors: ${colors}`);
 
-function getTotal(products, category) {
-    let total = 0;
-    for (let index in products) {
-      const product = products[index];
-      if (product.category === category && product.quantity > 0) {
-        total += product.price * product.quantity;
-      }
-    }
-    return total;
+// у нас є масив з ім'ям та прізвищем
+// let arr = ["Ilya", "Kantor"];
+
+// деструктурируюче присвоювання
+// записує firstName = arr[0]
+// та surname = arr[1]
+
+// let [firstName, surname] = arr;
+// console.log(firstName); // Ilya
+// console.log(surname);  // Kantor
+
+// let [firstName, surname] = arr;
+// let firstName = arr[0];
+// let surname = arr[1];
+
+const person = {
+  name: "Nelli",
+  surname: "Laroy",
+  age: 25,
 };
 
-console.log(getTotal(products, "red"));
+function personInfo({name, surname, age}) {
+  return `Мене звати ${name} ${surname} і мені ${age} років".`;
+}
+console.log(personInfo(person));

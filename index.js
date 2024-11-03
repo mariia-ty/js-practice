@@ -70,13 +70,54 @@
 // let firstName = arr[0];
 // let surname = arr[1];
 
-const person = {
-  name: "Nelli",
-  surname: "Laroy",
-  age: 25,
+// const person = {
+//   name: "Nelli",
+//   surname: "Laroy",
+//   age: 25,
+// };
+
+// function personInfo({name, surname, age}) {
+//   return `Мене звати ${name} ${surname} і мені ${age} років".`;
+// }
+// console.log(personInfo(person));
+
+// const user = {
+//   name: "John",
+//   age: 30,
+//   email: "john@example.com",
+// };
+
+// const { name, age, email } = user;
+// console.log(name, age, email);
+
+// const car = {
+//   make: "Toyota",
+//   model: "Camry",
+//   year: 2020,
+//   features: ["power windows", "rear camera", "navigation"],
+//   safety: {
+//     airbags: true,
+//     antilock_brakes: true,
+//     stability_control: true,
+//   },
+// };
+
+// const { make, model, year, features:[feature1, feature2, feature3], safety:{airbags, antilock_brakes, stability_control} } = car;
+// console.log( feature1);
+
+const movie = {
+  title: "The Shawshank Redemption",
+  director: {
+    name: "Frank Darabont",
+    nationality: "American",
+  },
+  actors: ["Tim Robbins", "Morgan Freeman"],
+  release_year: 1994,
+  ratings: {
+    imdb: 9.3,
+    rotten_tomatoes: 90,
+  },
 };
 
-function personInfo({name, surname, age}) {
-  return `Мене звати ${name} ${surname} і мені ${age} років".`;
-}
-console.log(personInfo(person));
+const { title, director:{ name, nationality }, actors:[actor1, actor2], release_year, ratings:{imdb, rotten_tomatoes} } = movie; 
+console.log(imdb);

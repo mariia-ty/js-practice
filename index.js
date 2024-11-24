@@ -29,16 +29,16 @@
 //     this.email = email; // Пошта користувача
 //   }
 
-  // // Метод для привітання
-  // sayHello() {
-  //   console.log(`Привіт, мене звати ${this.name}, моя пошта: ${this.email}`);
-  // }
+// // Метод для привітання
+// sayHello() {
+//   console.log(`Привіт, мене звати ${this.name}, моя пошта: ${this.email}`);
+// }
 
-  // // Метод для оновлення імені
-  // updateName(newName) {
-  //   this.name = newName;
-  //   console.log(`Ім'я оновлено на: ${this.name}`);
-  // }
+// // Метод для оновлення імені
+// updateName(newName) {
+//   this.name = newName;
+//   console.log(`Ім'я оновлено на: ${this.name}`);
+// }
 
 //   // Метод для оновлення пошти
 //   updateEmail(newEmail) {
@@ -113,25 +113,108 @@
 // console.log(car3);
 // car3.displayInfo();
 
-class Student {
-  constructor(name, grade, email) {
-    this.name = name; 
-    this.grade = grade; 
-    this.email = email; 
-  }
-  studentName() {
-    console.log(`The name of the student is: ${this.name}`);
-  }
-  updateGrade(newGrade) {
-    this.grade = newGrade;
-  }
-  displayInfo() {
-    console.log(`Student name: ${this.name}, Grade: ${this.grade}, Email: ${this.email}`);
-    
-  }
-};
+// class Student {
+//   constructor(name, grade, email) {
+//     this.name = name;
+//     this.grade = grade;
+//     this.email = email;
+//   }
+//   studentName() {
+//     console.log(`The name of the student is: ${this.name}`);
+//   }
+//   updateGrade(newGrade) {
+//     this.grade = newGrade;
+//   }
+//   displayInfo() {
+//     console.log(`Student name: ${this.name}, Grade: ${this.grade}, Email: ${this.email}`);
 
-const mango = new Student('Mango', 10, 'mango@example.com');
-mango.studentName();
-mango.updateGrade(11);
-mango.displayInfo();
+//   }
+// };
+
+// const mango = new Student('Mango', 10, 'mango@example.com');
+// mango.studentName();
+// mango.updateGrade(11);
+// mango.displayInfo();
+
+class User {
+  constructor(email, role, name, phoneNum) {
+    this.email = email;
+    this.role = role;
+    this.name = name;
+    this.phoneNum = phoneNum;
+  }
+
+  getUserInfo() {
+    return `Email: ${this.email}, Role: ${this.role}, Name: ${this.name}, Phone Number: ${this.phoneNum}`;
+  }
+}
+
+class FrontendDeveloper extends User {
+  constructor(email, name, phoneNum) {
+    super(email, "Frontend Developer", name, phoneNum);
+  }
+
+  code() {
+    return "Writing React components and styling with CSS.";
+  }
+}
+
+class BackendDeveloper extends User {
+  constructor(email, name, phoneNum) {
+    super(email, "Backend Developer", name, phoneNum);
+  }
+
+  code() {
+    return "Building APIs and managing databases.";
+  }
+}
+
+class Designer extends User {
+  constructor(email, name, phoneNum) {
+    super(email, "Designer", name, phoneNum);
+  }
+
+  code() {
+    return "Creates website mock-ups and design ideas.";
+  }
+}
+
+class ProjectManager extends User {
+  constructor(email, name, phoneNum) {
+    super(email, "Project Manager", name, phoneNum);
+  }
+
+  code() {
+    return "Oversees and controls the progress of the project and some tasks (ie. money).";
+  }
+}
+
+class WebTester extends User {
+  constructor(email, name, phoneNum) {
+    super(email, "Website Tester", name, phoneNum);
+  }
+
+  code() {
+    return "Tests the functions of the website and reports any bugs present.";
+  }
+}
+
+const frontendDev = new FrontendDeveloper("frontend@example.com","Jerry",4357869000);
+console.log(frontendDev.getUserInfo());
+console.log(frontendDev.code());
+
+const backendDev = new BackendDeveloper("backend@example.com", "Larry", 7884093452);
+console.log(backendDev.getUserInfo());
+console.log(backendDev.code());
+
+const designDev = new Designer("designer@example.com", "Terry", 6239086754);
+console.log(designDev.getUserInfo());
+console.log(designDev.code());
+
+const pojectMan = new ProjectManager("designer@example.com", "Barry", 6745894390);
+console.log(pojectMan.getUserInfo());
+console.log(pojectMan.code());
+
+const webTest = new WebTester("designer@example.com","Garry",5463782050);
+console.log(webTest.getUserInfo());
+console.log(webTest.code());

@@ -1,26 +1,54 @@
-//lesson 17
-// const btn = document.querySelector(".btn");
-// btn.style.backgroundColor = "red";
-// btn.style.border = "none";
-// btn.style.width = "60px";
-// btn.style.height = "30px";
+//lesson 18
 
-// console.log(btn.style);
+// const heading = document.createElement("h2");
+// console.log(heading);
+// heading.textContent = "Heading 2";
+// console.log(heading);
 
-// btn.classList.add("txt");
-// btn.classList.remove("txt");
-// btn.classList.toggle("red");
+// const image = document.createElement("img");
+// image.src =
+//     "https://gratisography.com/wp-content/uploads/2024/10/gratisography-cool-cat-800x525.jpg";
+// console.log(image);
 
-// btn.textContent = "hi";
+// const container = document.querySelector("#container");
+// const newElement = document.createElement("p");
+// newElement.textContent = "hello";
+// container.append(newElement);
 
-// 1. Отримайте доступ до списку
-// 2. Додайте жовтий колір фону
-// 3. Додайте клас "site-nav__link" до посилання
-// 4. Збільшіть розмір шрифта посилання
+// const anotherElement = document.createElement("h4");
+// anotherElement.textContent = "Header";
+// container.prepend(anotherElement);
+// container.after(anotherElement);
+// container.before(anotherElement);
 
-const siteNav = document.querySelector(".site-nav");
-siteNav.style.backgroundColor = "yellow"; 
-siteNav.style.listStyle = "none";
-const link = document.querySelector("a");
-link.classList.toggle("site-nav__link");
-link.style.fontSize = "24px";
+// const container = document.getElementById("container");
+// console.log("Початковий вміст:", container.innerHTML);
+
+// container.innerHTML = `
+//   <h2>Оновлений вміст</h2>
+//   <p>Цей текст додано за допомогою innerHTML</p>
+// `;
+// console.log("Новий вміст:", container.innerHTML);
+
+// const products = [
+//   { name: "Телефон", price: 12000 },
+//   { name: "Ноутбук", price: 35000 },
+//   { name: "Навушники", price: 2500 },
+// ];
+// const container = document.getElementById("container");
+// let productHTML = "<h2>Список товарів:</h2><ul>";
+// products.forEach((product) => {
+//   productHTML += `<li>${product.name} - ${product.price} грн</li>`;
+// });
+// productHTML += "</ul>";
+// container.innerHTML = productHTML;
+
+// container.innerHTML = "";
+
+
+const header = document.createElement("h1");
+header.textContent = "Привіт, це перший мій створений елемент!";
+header.classList.add = "title";
+const container = document.getElementById("container");
+container.appendChild(header);
+header.style.color = "blue";

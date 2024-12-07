@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS-Practice</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <!-- <button class="btn">Hello</button> -->
-    <ul class="site-nav">
+    <!-- <ul class="site-nav">
       <li class="site-nav__item">
         <a href="">Про нас</a>
       </li>
@@ -17,10 +18,11 @@
       <li class="site-nav__item">
         <a href="">Контакти</a>
       </li>
-    </ul>
-
+    </ul> -->
+    <div id="container">
+      <p>Існуючий елемент</p>
+    </div>
     
-
     <script src="index.js"></script>
   </body>
 </html>
@@ -1191,5 +1193,33 @@ console.log(webTest.getUserInfo());
 console.log(webTest.code());
 
 */
+/* 
+//lesson 17
+// const btn = document.querySelector(".btn");
+// btn.style.backgroundColor = "red";
+// btn.style.border = "none";
+// btn.style.width = "60px";
+// btn.style.height = "30px";
 
+// console.log(btn.style);
+
+// btn.classList.add("txt");
+// btn.classList.remove("txt");
+// btn.classList.toggle("red");
+
+// btn.textContent = "hi";
+
+// 1. Отримайте доступ до списку
+// 2. Додайте жовтий колір фону
+// 3. Додайте клас "site-nav__link" до посилання
+// 4. Збільшіть розмір шрифта посилання
+
+const siteNav = document.querySelector(".site-nav");
+siteNav.style.backgroundColor = "yellow"; 
+siteNav.style.listStyle = "none";
+const link = document.querySelector("a");
+link.classList.toggle("site-nav__link");
+link.style.fontSize = "24px";
+
+*/
 -->

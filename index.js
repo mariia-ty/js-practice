@@ -1,54 +1,89 @@
-//lesson 18
+// Lesson 19
+// const singleBtn = document.querySelector("#single");
 
-// const heading = document.createElement("h2");
-// console.log(heading);
-// heading.textContent = "Heading 2";
-// console.log(heading);
+// const handleClick = () => console.log("CLICK!");
 
-// const image = document.createElement("img");
-// image.src =
-//     "https://gratisography.com/wp-content/uploads/2024/10/gratisography-cool-cat-800x525.jpg";
-// console.log(image);
+// singleBtn.addEventListener("click", handleClick);
 
-// const container = document.querySelector("#container");
-// const newElement = document.createElement("p");
-// newElement.textContent = "hello";
-// container.append(newElement);
+// const multiBtn = document.querySelector("#multiple");
 
-// const anotherElement = document.createElement("h4");
-// anotherElement.textContent = "Header";
-// container.prepend(anotherElement);
-// container.after(anotherElement);
-// container.before(anotherElement);
+// const firstCallback = () => console.log("First callback!");
+// const secondCallback = () => console.log("Second callback!");
+// const thirdCallback = () => console.log("Third callback!");
 
-// const container = document.getElementById("container");
-// console.log("Початковий вміст:", container.innerHTML);
+// multiBtn.addEventListener("click", firstCallback);
+// multiBtn.addEventListener("click", secondCallback);
+// multiBtn.addEventListener("click", thirdCallback);
 
-// container.innerHTML = `
-//   <h2>Оновлений вміст</h2>
-//   <p>Цей текст додано за допомогою innerHTML</p>
-// `;
-// console.log("Новий вміст:", container.innerHTML);
+// const addBtn = document.querySelector('button[data-action="add"]');
+// const removeBtn = document.querySelector('button[data-action="remove"]');
+// const btn = document.querySelector("#btn");
 
-// const products = [
-//   { name: "Телефон", price: 12000 },
-//   { name: "Ноутбук", price: 35000 },
-//   { name: "Навушники", price: 2500 },
-// ];
-// const container = document.getElementById("container");
-// let productHTML = "<h2>Список товарів:</h2><ul>";
-// products.forEach((product) => {
-//   productHTML += `<li>${product.name} - ${product.price} грн</li>`;
+// const handleClick = () => {
+//   alert("CLICK EVENT LISTENER ALERT!");
+// };
+
+// addBtn.addEventListener("click", () => {
+//   btn.addEventListener("click", handleClick);
 // });
-// productHTML += "</ul>";
-// container.innerHTML = productHTML;
 
-// container.innerHTML = "";
+// removeBtn.addEventListener("click", () => {
+//   btn.removeEventListener("click", handleClick);
+// });
+
+// const btn = document.querySelector("#btn");
+
+// const handleClick = (event) => {
+//   console.log("event: ", event);
+
+//     console.log("event type: ", event.type);
+    
+//   console.log("this: ", this);
+//   console.log("target: ", event.target);
+// };
+
+// btn.addEventListener("click", handleClick);
 
 
-const header = document.createElement("h1");
-header.textContent = "Привіт, це перший мій створений елемент!";
-header.classList.add = "title";
-const container = document.getElementById("container");
-container.appendChild(header);
-header.style.color = "blue";
+// const form = document.querySelector(".form");
+// const loginInput = form.querySelector('input[type="text"]');
+// const passInput = form.querySelector('input[type="password"]');
+
+// form.addEventListener("submit", handleSubmit);
+
+// function handleSubmit(event) {
+//   event.preventDefault();
+
+//   const login = loginInput.value.trim();
+//   const password = passInput.value.trim();
+
+//   if (login === "" || password === "") {
+//     return alert("Пожалуйста введите валидную информацию!");
+//   }
+
+//   form.reset();
+
+//   alert(`
+//     Спасибо за регистрацию!
+//     Логин: ${login}
+//     Пароль: ${password}
+//   `);
+// }
+
+// const btn = document.querySelector("#btn");
+// const alertMsg = () => alert("Hello World!");
+// btn.addEventListener("click", alertMsg);
+
+// const btn = document.querySelector(".btn");
+// const txt = document.querySelector(".txt");
+
+// btn.addEventListener("click", () => {
+//     alert(`Hello ${txt.value.trim()}`);
+// });
+
+
+const cBg = document.querySelector(".cBg");
+const website = document.querySelector("body");
+cBg.addEventListener("click", () => {
+    website.style.backgroundColor = "teal";
+});
